@@ -1,0 +1,39 @@
+﻿
+
+@* begin vue component *@
+<div id="app">
+    <h6 id="title">{{pageTitle}}</h6>
+    <p v-html="bold">
+        
+    </p>
+    <a v-bind:href="url" v-bind:title="url">{{urlTitle}}</a>
+    <div class="alert alert-primary" v-if="visible">I am visible</div>
+    <div v-else class="alert alert-danger">error!</div>
+    <ul>
+        <li v-for="person,index in people">{{index}}:{{person.name}}</li>
+    </ul>
+    <input type="text" v-model="name" class="form-control" />
+    <input type="text" v-model="city" class="form-control" />
+    <label class="col-form-label">{{name}}</label>
+    <label class="col-form-label">{{city}}</label>
+    <button class="btn btn-outline-info" v-on:click="showAlert">click me!</button>
+    <div class="row">
+        <div class="col col-lg-4 mx-auto border border-1">
+            <form v-on:submit.prevent="addPerson">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input v-model="person.name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input v-model="person.city" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* end of vue component *@
+<script src="~/vue/vue.js"></script>
+<script src="~/js/basics.js"></script>
