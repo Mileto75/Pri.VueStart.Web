@@ -18,6 +18,11 @@ namespace Pri.VueStart.Web.Controllers
             return View();
         }
 
+        public IActionResult Quote()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
